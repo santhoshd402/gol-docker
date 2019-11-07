@@ -1,8 +1,6 @@
 FROM tomcat:8
 LABEL AUTHOR=santhu
-ENV src /workspace/gol-docker/gameoflife-web/target/gameoflife.war
-ENV targ /usr/local/tomcat/webapps/
-ADD $src $targ
+COPY gameoflife.war /usr/local/tomcat/webapps
 EXPOSE 8080
 CMD ["catalina.sh","run"]
 
